@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+// the data which can be used anywhere throughout the application, we don't have to share the state and properties to
+// different compnents
 const initialState = {
   mode: 'light',
   user: null,
-  token: null,
+  token: null, //auth information
   posts: [],
 };
 
@@ -12,7 +13,8 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     setMode: (state) => {
-      state.mode = state.mode === 'light' ? 'dark' : 'light';
+      state.mode = state.mode === 'light' ? 'dark' : 'light'; // changing modes, if u call setmode then
+      // the theme will change
     },
     setLogin: (state, action) => {
       state.user = action.payload.user;
