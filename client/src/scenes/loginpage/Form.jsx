@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState } from "react";
 import {
     Box,
@@ -12,9 +14,9 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setLogin } from "state";
+import { setLogin } from "../../state";
 import Dropzone from "react-dropzone";
-import FlexBetween from "components/FlexBetween";
+import FlexBetween from "../../components/FlexBetween.jsx";
 
 const registerSchema = yup.object().shape({
     firstName: yup.string().required("required"),
@@ -59,8 +61,8 @@ const Form = () => {
         // this allows us to send form info with image
         const formData = new FormData();
         for (let value in values) {
-            formData.append(value, values[value]);
-        }
+            formData.append(value, values[value]);}
+            
         formData.append("picturePath", values.picture.name);
 
         const savedUserResponse = await fetch(

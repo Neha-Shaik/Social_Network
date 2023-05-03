@@ -1,7 +1,8 @@
-//helps us in importing files in different directories
 {
     "compilerOptions": {
-        "baseUrl": "src"
-    },
-    "include" : ["src"] 
-}
+      "baseUrl": "src",
+      "paths": {
+        "*": ["src/*"]
+      }
+    }
+  }
