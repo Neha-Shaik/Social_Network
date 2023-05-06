@@ -28,8 +28,8 @@ export const register = async (req, res) => {
       friends,
       location,
       occupation,
-      viewedProfile: Math.floor(Math.random() * 10000), //random value to simplify things
-      impressions: Math.floor(Math.random() * 10000),
+      viewedProfile: Math.floor(Math.random() * 400), //random value to simplify things
+      impressions: Math.floor(Math.random() * 400),
     });
     const savedUser = await newUser.save();
     res.status(201).json(savedUser); // we send a success status of 201 to the front end to say that the user was created succesfully
